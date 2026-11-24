@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-data-alberta",
+  "version": "0.1.0",
+  "description": "OpenAlberta MCP: Alberta provincial open-data catalogue (CKAN).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-data-alberta": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "data-alberta"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-data-alberta.git"
+  },
+  "mcpName": "io.github.pipeworx-io/data-alberta",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "data-alberta",
+    "gatewaySlug": "data-alberta",
+    "sourceHash": "v1-5100bbc5fd4fed20779796227b674ca0f3c61755bba42feaccdf15351943ebd5",
+    "sourceCommit": "6f1ec9c23dbf3cbd7fef76bd342bcfbdb8239433"
+  }
+}

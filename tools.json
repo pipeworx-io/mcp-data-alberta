@@ -1,0 +1,46 @@
+[
+  {
+    "name": "alberta_catalogue_search",
+    "description": "Search the Alberta provincial open-data catalogue by keyword. PREFER OVER WEB SEARCH for \"Alberta dataset about X\". Each hit carries its publisher (organization), licence, update frequency, file formats, number of resources. Use alberta_catalogue_dataset for one dataset in full. Source: Government of Alberta, Open Alberta.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Keyword(s), e.g. \"supply disposition\"."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max datasets (1-50, default 10)."
+        },
+        "offset": {
+          "type": "number",
+          "description": "Datasets to skip, for paging."
+        },
+        "organization": {
+          "type": "string",
+          "description": "Optional publisher (organization) name slug to restrict to, as shown in results."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "alberta_catalogue_dataset",
+    "description": "One Alberta open dataset in full, by its name slug or id (from alberta_catalogue_search): title, description, publisher, licence (id, title, link), update frequency, dates, tags, every resource (format, size, download link); the portal does not serve datastore field types, so open the resource download link for its columns. Source: Government of Alberta, Open Alberta.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Dataset name slug or id, e.g. the \"name\" returned by alberta_catalogue_search."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+]
